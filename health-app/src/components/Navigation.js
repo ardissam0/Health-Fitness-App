@@ -1,7 +1,6 @@
 import React from 'react';
 import fire from "../config/fire";
 import { Link } from 'react-router-dom';
-import { useUser } from "../hooks";
 import useDarkMode from '../hooks/useDarkMode';
 
 const Navigation = () => {
@@ -11,12 +10,9 @@ const Navigation = () => {
       setDarkMode(!darkMode);
   };
 
-  const user = useUser();
-
   return (
     <div>
       <div className="navigation">
-      {user?.profile}
         <div className="navLink">
           <Link style ={{textDecoration: 'None'}} to="/"><p>HOME</p></Link>
         </div>

@@ -92,7 +92,7 @@ code {
   }
 
   .navigation .navLink:hover{
-	background-color: #7FFF00;
+	background-color: #538026;
 	transition: all 250ms ease-in-out;
 	border-radius: 5px;
   }
@@ -107,6 +107,11 @@ code {
   
   .navigation .navLink p {
 	color: #000000;
+  }
+
+  .navigation .navLink p:hover {
+	color: #f5f6fa;
+	transition: color 0.25s ease-out;
   }
 
   @media(max-width: 600px) {
@@ -157,7 +162,7 @@ code {
 	margin-top: 1.5px;
 	position: absolute;
 	transition: 0.2s;
-	width: 15px;
+	width: 16px;
   }
   
   .toggle:hover {
@@ -171,44 +176,31 @@ code {
   .dark-mode {
 	color: #fff;
 	background-color: #000000;
-	transition: background-color 0.25s ease-out;
+	transition: all 0.25s ease-out;
   }
 
-  /* Main Recipe page */
+  /* Main Search page */
 
   .Home {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
   }
-
-  h1 {
-	text-align: center;
-	font-size: 1.3rem;
-	font-weight: bold;
-	letter-spacing: 0.1rem;
-	font-style: italic;
-	color: #538026;
-	text-shadow: 0 0.2rem 5rem rgb(119, 115, 115);
-	text-transform: uppercase;
-	margin: 20px;
-  }
-
-  @media(max-width: 700px) {
-	h1 {
-		margin: 15px;
-	  }
-  }
-  
   
   .search-form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #d3d3d3;
-	border-radius: 0.5rem;
 	margin: 1%;
 	padding: 1%;
+	position: relative;
+	width: 70%;
+  }
+
+  .search-form input[type="text"]{
+    border: 2px solid #538026;
+	margin: 1%;
+	height: 27px;
 	position: relative;
 	width: 70%;
   }
@@ -216,7 +208,7 @@ code {
   @media(max-width: 700px) {
 	.search-form {
 		width: 80%;
-		margin: 0;
+		margin-top: 20px;
 	  }
   }
   
@@ -243,7 +235,6 @@ code {
 		font-size: 1rem;
 	  }
   }
-  
   
   .search-form input {
 	font-size: 1.05rem;
@@ -283,6 +274,8 @@ code {
 		height: 29px;
 	  }
   }
+
+  /* Ingredients Style */
   
   .recipes {
 	width: 90%;
@@ -390,6 +383,7 @@ code {
   .ingredient-list {
 	margin-top: 3%;
 	background-color: #f0f0f0;
+	color: black;
 	border-radius: 0.5rem;
 	padding: 0.3rem;
   }
@@ -504,7 +498,7 @@ code {
 	  font-size: 1.05rem;
 	  margin-bottom: 8px;
 	  font-weight: bold;
-	  color: #313843;
+	  color: #538026;
   
 	  background-color: #f5f6fa;
 	  box-shadow: 0px 0px 12px 2px rgba(66, 64, 64, 0.2);
@@ -530,7 +524,7 @@ code {
 	font-size: 1.05rem;
 	margin-bottom: 8px;
 	font-weight: bold;
-	color: #313843;
+	color: #538026;
   }
   
   .login-main input{
@@ -538,7 +532,7 @@ code {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 5px;
-	color: #313843;
+	color: #538026;
   }
   
   .login-main .mainLogin-btn {
@@ -548,7 +542,7 @@ code {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	background-color: #F7B301;
+	background-color: #000000;
 	border: none;
 	border-radius: 3px;
 	color: #fff;
@@ -558,7 +552,7 @@ code {
   }
   
   .login-main .mainLogin-btn:hover {
-	background-color: #313843;
+	background-color: #538026;
   }
   
   .login-redirect{
@@ -574,6 +568,11 @@ code {
 	background: transparent;
 	font-weight: bold;
 	font-size: 1.1rem;
+  }
+
+  .Logout__button:hover{
+	color: #f5f6fa;
+	transition: color 0.25s ease-out;
   }
   
   @media(max-width: 600px) {
