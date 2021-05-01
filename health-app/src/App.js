@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { AuthProvider } from "./providers";
 import PrivateRoute from './components/PrivateRoute';
@@ -38,6 +37,7 @@ function App() {
                   <div className="navLink">
                     <button className="Logout__button-footer" onClick={() => fire.auth().signOut()}>Log Out</button>
                   </div>
+                  <div id="edamam-badge" data-color="white"></div>
                 </div>
                 <span>&copy; Copyright {(new Date().getFullYear())} Health App</span>
                 <br/>

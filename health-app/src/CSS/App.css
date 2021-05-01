@@ -480,6 +480,13 @@ code {
 	  text-align: center;
 	}
   }
+
+  @media(max-width: 700px) {
+	#edamam-badge {
+		margin-top: 10px;
+	}
+  }
+
   
   /* Login/SignUp Styling */
   
