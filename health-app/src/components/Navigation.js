@@ -20,12 +20,6 @@ const Navigation = () => {
         <div className="navLink">
           <Link style ={{textDecoration: 'None'}} to="/"><p>HOME</p></Link>
         </div>
-        {/* <div className="navLink">
-          <Link style ={{textDecoration: 'None'}} to="/US"><p>United States</p></Link>
-        </div>
-        <div className="navLink">
-          <Link style ={{textDecoration: 'None'}} to="/Weather"><p>Weather</p></Link>
-        </div> */}
         <div className="navLink">
           <Link style ={{textDecoration: 'None'}} to="/About"><p>About</p></Link>
         </div>

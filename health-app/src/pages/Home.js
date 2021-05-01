@@ -28,7 +28,7 @@ function Home() {
       setQuery("");
       setAlert("");
     } else {
-      setAlert("Please fill the form");
+      setAlert("Error: add text OR check spelling");
     }
   };
 
@@ -41,7 +41,7 @@ function Home() {
 
   return (
     <div className="Home">
-      <h1>Food Searching App</h1>
+      <h1>Recipe Searcher</h1>
       <form onSubmit={onSubmit} className="search-form">
         {alert !== "" && <Alert alert={alert} />}
         <input

@@ -22,9 +22,7 @@ function App() {
       <Navigation />
         <div>
           <PrivateRoute exact path="/" component={Home} />
-          {/* <PrivateRoute exact path='/US' component={US} /> */}
           <PrivateRoute exact path='/About' component={About} />
-          {/* <PrivateRoute exact path='/Weather' component={Weather} /> */}
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
         </div>
@@ -34,12 +32,6 @@ function App() {
                     <div className="navLink">
                     <Link style ={{textDecoration: 'None'}} to="/"><p>Home</p></Link>
                   </div>
-                  {/* <div className="navLink">
-                    <Link style ={{textDecoration: 'None'}} to="/US"><p>page 2</p></Link>
-                  </div>
-                  <div className="navLink">
-                    <Link style ={{textDecoration: 'None'}} to="/Weather"><p>page 3</p></Link>
-                  </div> */}
                   <div className="navLink">
                     <Link style ={{textDecoration: 'None'}} to="/About"><p>About</p></Link>
                   </div>
