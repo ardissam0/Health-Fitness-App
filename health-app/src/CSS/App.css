@@ -1,0 +1,597 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input:focus {
+  outline:none;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Navigation/Link Styles */
+
+.navigation {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 15px;
+	border-bottom: 3px solid #538026;
+	background-color: #f5f6fa;
+	font-size: 1.2rem;
+  }
+  
+  @media(max-width: 600px) {
+	.navigation {
+	  flex-direction: column;
+	  background-color: #f5f6fa;
+	}
+  }
+  
+  .navigation .navLink{
+	border-radius: 5x;
+	padding: 5px;
+	font-weight: bold;
+	color: #000000;
+  }
+
+  .navigation .navLink:hover{
+	background-color: #7FFF00;
+	transition: all 250ms ease-in-out;
+	border-radius: 5px;
+  }
+
+  @media(max-width: 600px) {
+	.navigation .navLink {
+	  margin-top: 10px;
+	  background-color: #000000;
+	  text-align: center;
+	}
+  }
+  
+  .navigation .navLink p {
+	color: #000000;
+  }
+
+  @media(max-width: 600px) {
+	.navigation .navLink p {
+	  color: #f5f6fa;
+	}
+  }
+  
+  /* Dark Mode Styles */
+  
+  .dark-mode__container {
+	display: flex;
+	margin-top: 1px;
+  }
+  
+  @media(max-width: 600px) {
+	.dark-mode__container {
+	  justify-content: center;
+	  margin-top: 20px;
+	}
+  }
+  
+  .dark-mode__container .light__symbol{
+	margin: 3.5px;
+	color: gold;
+  }
+  
+  .dark-mode__container .dark__symbol{
+	margin: 3.5px;
+	color: midnightblue;
+  }
+  
+  .dark-mode__toggle {
+	margin: 2px;
+	background: transparent;
+	border-radius: 50px;
+	border: 2px solid black;
+	height: 19px;
+	position: relative;
+	width: 40px;
+  }
+  
+  .toggle {
+	background: #000000;
+	border-radius: 75px;
+	height: 15px;
+	left: 4px;
+	margin-top: 1.5px;
+	position: absolute;
+	transition: 0.2s;
+	width: 15px;
+  }
+  
+  .toggle:hover {
+	cursor: pointer;
+  }
+  
+  .toggled {
+	left: 18px;
+  }
+  
+  .dark-mode {
+	color: #fff;
+	background-color: #000000;
+	transition: background-color 0.25s ease-out;
+  }
+
+  /* Main Recipe page */
+
+  .Home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+
+  h1 {
+	text-align: center;
+	font-size: 1.3rem;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+	font-style: italic;
+	color: #538026;
+	text-shadow: 0 0.2rem 5rem rgb(119, 115, 115);
+	text-transform: uppercase;
+	margin: 20px;
+  }
+
+  @media(max-width: 700px) {
+	h1 {
+		margin: 15px;
+	  }
+  }
+  
+  
+  .search-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #d3d3d3;
+	border-radius: 0.5rem;
+	margin: 1%;
+	padding: 1%;
+	position: relative;
+	width: 70%;
+  }
+
+  @media(max-width: 700px) {
+	.search-form {
+		width: 80%;
+		margin: 0;
+	  }
+  }
+  
+  .alert {
+	position: absolute;
+	top: -3rem;
+	left: 0;
+	background-color: rgb(233, 72, 72);
+	width: calc(100% - 0.4rem);
+	border-radius: 0.5rem;
+	padding: 0.2rem;
+  }
+  
+  .alert h3 {
+	font-size: 1.2rem;
+	color: #fff;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: center;
+  }
+
+  @media(max-width: 700px) {
+	.alert h3 {
+		font-size: 1rem;
+	  }
+  }
+  
+  
+  .search-form input {
+	font-size: 1.05rem;
+	border: none;
+	border-bottom: 0.1rem solid #ccc;
+	margin: 0 0.5rem;
+	border-radius: 0.5rem;
+	height: 2rem;
+  }
+  
+  .search-form input[type="text"] {
+	padding: 0 0.5rem;
+	width: 60%;
+	color: #555;
+  }
+  
+  @media(max-width: 990px) {
+	.search-form input[type="text"] {
+		padding: .75%;
+		height: 20px;
+	  }
+  }
+  
+  .search-form input[type="submit"] {
+	width: 15%;
+	text-transform: uppercase;
+	background-color: #538026;
+	color: #fff;
+	font-size: 1.05rem;
+	cursor: pointer;
+  }
+
+  @media(max-width: 990px) {
+	.search-form input[type="submit"] {
+		width: 27%;;
+		font-size: .95rem;
+		height: 29px;
+	  }
+  }
+  
+  .recipes {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+  }
+  
+  .recipe {
+	width: 15%;
+	margin: 1.5%;
+	display: flex;
+	flex-direction: column;
+	background-color: #d3d3d3;
+	padding: 1.5%;
+	position: relative;
+	border-radius: 0.5rem;
+  }
+
+  @media(max-width: 700px) {
+	.recipe {
+		width: 35%;
+		margin: 2.5%;
+		padding: 3%;
+		border-radius: 0.5rem;
+	  }
+  }
+
+  @media(max-width: 475px) {
+	.recipe {
+		width: 90%;
+		margin: 7%;
+		padding: 3%;
+		border-radius: 0.5rem;
+	  }
+  }
+  
+  .recipe h2 {
+	text-align: center;
+	background-color: rgba(161, 161, 161, 0.7);
+	border-radius: 0.5rem;
+	padding: 0.3rem 0.5rem;
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+	right: 2rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-shadow: 0 0.5rem 0.5rem #555;
+	color: #fff;
+  }
+  
+  @media(max-width: 700px) {
+	.recipe h2{
+		font-size: 1rem;
+		top: 1rem;
+		left: 1rem;
+		right: 1rem;
+	  }
+  }
+
+  @media(max-width: 990px) {
+	.recipe h2{
+		font-size: 1.3rem;
+		top: .9rem;
+		left: .9rem;
+		right: .9rem;
+	  }
+  }
+
+  .recipe img {
+	border-radius: 0.5rem;
+	object-fit: cover;
+  }
+  
+  .recipe a {
+	font-size: 1.1rem;
+	color: #538026;
+	margin: 10px 0px 10px 0;
+  }
+  
+  .recipe button {
+	margin: 1%;
+	font-size: 1.05rem;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #538026;
+	border: none;
+	border-radius: 0.5rem;
+	padding: 1%;
+	cursor: pointer;
+	outline: none;
+  }
+
+  @media(max-width: 700px) {
+	.recipe button{
+		font-size: .9rem;
+		padding: 2%;
+		margin: 2%;
+	  }
+  }
+  
+  .ingredient-list {
+	margin-top: 3%;
+	background-color: #f0f0f0;
+	border-radius: 0.5rem;
+	padding: 0.3rem;
+  }
+
+  .ingredient-list li{
+	margin: 1%;
+  }
+
+  .health__div {
+	margin: 2%;
+  }
+
+  /* About page Styling */
+
+  .aboutPage__style {
+	justify-content: center;
+	text-align: center;
+	padding: 5%;
+  }
+
+  .aboutPage__style .about-list li{
+	margin: 2%;
+  }
+
+  .aboutPage__style .about-list li p{
+	font-size: 1.2rem;
+	font-weight: bold;
+  }
+
+  /* Footer Styling */
+
+.footer-container {
+	position: relative;
+	min-height: 100vh;
+  }
+  
+  footer {
+	text-align: center;
+	background-color: #538026;
+	position: absolute; 
+	bottom: 0; 
+	width: 100%;
+  }
+  
+  .navigation-footer {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 15px;
+	background-color: #538026;
+	font-size: 1.2rem;
+	color: #000000;
+  }
+  
+  .navigation-footer footer span {
+	padding: 10px;
+  }
+  
+  @media(max-width: 600px) {
+	.navigation-footer {
+	  flex-direction: column;
+	  margin-top: 10px;
+	  background-color: #538026;
+	}
+  }
+  
+  .navigation-footer  .navLink{
+	border: 1px solid #538026;
+	background-color: #538026;
+	border-radius: 5x;
+	padding: 5px;
+	font-weight: bold;
+  }
+
+  .navigation-footer  .navLink p{
+	color: #000000;
+  }
+  
+  .navigation-footer  .navLink:hover{
+	background-color: #7FFF00;
+	transition: all 250ms ease-in-out;
+	border-radius: 5px;
+  }
+  
+  @media(max-width: 600px) {
+	.navigation-footer  .navLink {
+	  margin-top: 10px;
+	  background-color:#f5f6fa;;
+	  text-align: center;
+	}
+  }
+
+  @media(max-width: 700px) {
+	#edamam-badge {
+		margin-top: 10px;
+	}
+  }
+
+  
+  /* Login/SignUp Styling */
+  
+  .login-main {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .login-main form{
+	  display: flex;
+	  flex-direction: column;
+	  font-size: 1.05rem;
+	  margin-bottom: 8px;
+	  font-weight: bold;
+	  color: #313843;
+  
+	  background-color: #f5f6fa;
+	  box-shadow: 0px 0px 12px 2px rgba(66, 64, 64, 0.2);
+	  border-radius: 4px;
+	  position: relative;
+	  padding: 2% 2% 3% 2%;
+	  margin: 5% 0% 5% 0%;
+  }
+  
+  @media(max-width: 600px) {
+	.login-main form{
+	  padding: 4% 4% 6% 4%;
+	}
+  }
+  
+  .login-main form h1{
+	text-align: center;
+  }
+  
+  .login-main label{
+	display: flex;
+	flex-direction: column;
+	font-size: 1.05rem;
+	margin-bottom: 8px;
+	font-weight: bold;
+	color: #313843;
+  }
+  
+  .login-main input{
+	font-size: 1.02rem;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 5px;
+	color: #313843;
+  }
+  
+  .login-main .mainLogin-btn {
+	font-size: 1.05rem;
+	text-align: center;
+	margin-top: 12px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	background-color: #F7B301;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+	transition: all 250ms ease-in-out;
+	cursor: pointer;
+	padding: 2%;
+  }
+  
+  .login-main .mainLogin-btn:hover {
+	background-color: #313843;
+  }
+  
+  .login-redirect{
+	margin-top: 10px;
+	font-weight: normal;
+  }
+  
+  /* Logout Stlying */
+  
+  .Logout__button{
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	font-weight: bold;
+	font-size: 1.1rem;
+  }
+  
+  @media(max-width: 600px) {
+	.Logout__button{
+	  color: white;
+	}
+  }
+  
+  .Logout__button-footer {
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	font-weight: bold;
+	font-size: 1.1rem;
+  }
+  
+  .Logout__button-footer:hover {
+	transition: all 250ms ease-in-out;
+	color: #313843;
+  }
+  
