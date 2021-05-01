@@ -41,7 +41,6 @@ function Home() {
 
   return (
     <div className="Home">
-      <h1>Recipe Searcher</h1>
       <form onSubmit={onSubmit} className="search-form">
         {alert !== "" && <Alert alert={alert} />}
         <input

@@ -46,10 +46,6 @@ const Recipe = ({ recipe }) => {
                     </p>
                 ))}
                 </div>
-                <br/>
-                <div> Diet: <br/> <p className= "ingredient-list">{dietLabels.join(', ')}</p></div> 
-                <br/> 
-                <div>Health: <br/> <p className= "ingredient-list">{healthLabels.join(', ')}</p></div>
             </div>
         }
         <button onClick={() => setShow4(!show4)}>Health Labels</button>
