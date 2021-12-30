@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RecipeDetails from "./RecipeDetails";
+import Modal from "./Modal";
 
 import '../CSS/App.css';
 
@@ -17,26 +18,29 @@ const Recipe = ({ recipe }) => {
       <h2>{label}</h2>
       <img src={image} alt={label} />
       <a href={url} target="_blank" rel="noopener noreferrer">
-        URL
+        COOKING DIRECTIONS
       </a>
-      <button onClick={() => setShow(!show)}>Ingredients</button>
-      {show && <RecipeDetails ingredients={ingredients} />}
+      <button onClick={() => setShow(true)}>Ingredients</button>
+      <Modal show={show} setShow={setShow}>
+        <RecipeDetails ingredients={ingredients}/>
+      </Modal>
 
-      <button onClick={() => setShow2(!show2)}>Nutrients</button>
-      {show2 && 
-        <div className="health__div">
-            <div>
-                Nutrition Facts:
-            {Object.keys(totalNutrients).map((keyName, i) => (
-                <p className= "ingredient-list" key={i}>
-                    <span>{totalNutrients[keyName].label}: {Math.round(totalNutrients[keyName].quantity)}{totalNutrients[keyName].unit}</span>
-                </p>
-            ))}
+      <button onClick={() => setShow2(true)}>Nutrients</button>
+      <Modal show={show2} setShow={setShow2}>
+            <div className="health__div">
+                <div>
+                    Nutrition Facts:
+                {Object.keys(totalNutrients).map((keyName, i) => (
+                    <p className= "ingredient-list" key={i}>
+                        <span>{totalNutrients[keyName].label}: {Math.round(totalNutrients[keyName].quantity)}{totalNutrients[keyName].unit}</span>
+                    </p>
+                ))}
+                </div>
             </div>
-        </div>
-      }
-      <button onClick={() => setShow3(!show3)}>Daily Value</button>
-       {show3 &&
+       </Modal>
+       
+      <button onClick={() => setShow3(true)}>Daily Value</button>
+      <Modal show={show3} setShow={setShow3}>
             <div className="health__div">
                 <div>
                     Percent of Daily Value:
@@ -47,15 +51,16 @@ const Recipe = ({ recipe }) => {
                 ))}
                 </div>
             </div>
-        }
-        <button onClick={() => setShow4(!show4)}>Health Labels</button>
-        {show4 &&
+        </Modal>
+
+        <button onClick={() => setShow4(true)}>Health Labels</button>
+        <Modal show={show4} setShow={setShow4}>
             <div className="health__div">
                 <div> Diet: <br/> <p className= "ingredient-list">{dietLabels.join(', ')}</p></div> 
                 <br/> 
                 <div>Health: <br/> <p className= "ingredient-list">{healthLabels.join(', ')}</p></div>
             </div>
-        }
+        </Modal>
     </div>
   );
 };

@@ -66,13 +66,22 @@ code {
     monospace;
 }
 
+/* variable styles*/
+:root {
+	--clr-background: #6e5a42;
+	--clr-font: #27171e;
+	--clr-primary: #5f7745;
+	--clr-secondary: #7b9d70;
+	--clr-pop: #acc444;
+  }
+
 /* Navigation/Link Styles */
 
 .navigation {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 15px;
-	border-bottom: 3px solid #538026;
+	border-bottom: 3px solid var(--clr-primary);
 	background-color: #f5f6fa;
 	font-size: 1.2rem;
   }
@@ -80,7 +89,6 @@ code {
   @media(max-width: 600px) {
 	.navigation {
 	  flex-direction: column;
-	  background-color: #f5f6fa;
 	}
   }
   
@@ -88,11 +96,11 @@ code {
 	border-radius: 5x;
 	padding: 5px;
 	font-weight: bold;
-	color: #000000;
+	color: var(--clr-font);
   }
 
   .navigation .navLink:hover{
-	background-color: #538026;
+	background-color: var(--clr-primary);;
 	transition: all 250ms ease-in-out;
 	border-radius: 5px;
   }
@@ -106,7 +114,7 @@ code {
   }
   
   .navigation .navLink p {
-	color: #000000;
+	color: var(--clr-font);
   }
 
   .navigation .navLink p:hover {
@@ -148,21 +156,21 @@ code {
 	margin: 2px;
 	background: transparent;
 	border-radius: 50px;
-	border: 2px solid black;
+	border: 2px solid var(--clr-font);
 	height: 19px;
 	position: relative;
 	width: 40px;
   }
   
   .toggle {
-	background: #000000;
+	background: var(--clr-font);
 	border-radius: 75px;
 	height: 15px;
 	left: 4px;
 	margin-top: 1.5px;
 	position: absolute;
 	transition: 0.2s;
-	width: 16px;
+	width: 18px;
   }
   
   .toggle:hover {
@@ -175,7 +183,7 @@ code {
   
   .dark-mode {
 	color: #fff;
-	background-color: #000000;
+	background-color: var(--clr-font);;
 	transition: all 0.25s ease-out;
   }
 
@@ -198,7 +206,7 @@ code {
   }
 
   .search-form input[type="text"]{
-    border: 2px solid #538026;
+    border: 2px solid var(--clr-primary);
 	margin: 1%;
 	height: 27px;
 	position: relative;
@@ -245,12 +253,6 @@ code {
 	height: 2rem;
   }
   
-  .search-form input[type="text"] {
-	padding: 0 0.5rem;
-	width: 60%;
-	color: #555;
-  }
-  
   @media(max-width: 990px) {
 	.search-form input[type="text"] {
 		padding: .75%;
@@ -261,10 +263,14 @@ code {
   .search-form input[type="submit"] {
 	width: 15%;
 	text-transform: uppercase;
-	background-color: #538026;
+	border: 2px solid var(--clr-primary);
+	background-color: var(--clr-primary);
 	color: #fff;
 	font-size: 1.05rem;
 	cursor: pointer;
+  }
+  .search-form input[type="submit"]:hover{
+    background-color: var(--clr-secondary);
   }
 
   @media(max-width: 990px) {
@@ -278,7 +284,7 @@ code {
   /* Ingredients Style */
   
   .recipes {
-	width: 90%;
+	width: 95%;
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
@@ -287,8 +293,8 @@ code {
   }
   
   .recipe {
-	width: 15%;
-	margin: 1.5%;
+	width: 20%;
+	margin: 3%;
 	display: flex;
 	flex-direction: column;
 	background-color: #d3d3d3;
@@ -297,16 +303,16 @@ code {
 	border-radius: 0.5rem;
   }
 
-  @media(max-width: 700px) {
+  @media(max-width: 850px) {
 	.recipe {
 		width: 35%;
-		margin: 2.5%;
+		margin: 4%;
 		padding: 3%;
 		border-radius: 0.5rem;
 	  }
   }
 
-  @media(max-width: 475px) {
+  @media(max-width: 600px) {
 	.recipe {
 		width: 90%;
 		margin: 7%;
@@ -329,22 +335,20 @@ code {
 	text-shadow: 0 0.5rem 0.5rem #555;
 	color: #fff;
   }
-  
-  @media(max-width: 700px) {
-	.recipe h2{
-		font-size: 1rem;
-		top: 1rem;
-		left: 1rem;
-		right: 1rem;
-	  }
-  }
 
   @media(max-width: 990px) {
 	.recipe h2{
-		font-size: 1.3rem;
-		top: .9rem;
-		left: .9rem;
-		right: .9rem;
+		top: 1.75rem;
+		left: 1.8rem;
+		right: 1.8rem;
+	  }
+  }
+  
+  @media(max-width: 700px) {
+	.recipe h2{
+		top: 1.5rem;
+		left: 1.5rem;
+		right: 1.5rem;
 	  }
   }
 
@@ -356,36 +360,34 @@ code {
   .recipe a {
 	font-size: 1.1rem;
 	color: #538026;
+	text-align: center;
 	margin: 10px 0px 10px 0;
   }
   
   .recipe button {
-	margin: 1%;
+	margin: 1.5%;
 	font-size: 1.05rem;
 	text-transform: uppercase;
 	color: #fff;
-	background-color: #538026;
+	background-color: var(--clr-font);
 	border: none;
 	border-radius: 0.5rem;
-	padding: 1%;
+	padding: 1.5%;
 	cursor: pointer;
 	outline: none;
   }
 
-  @media(max-width: 700px) {
-	.recipe button{
-		font-size: .9rem;
-		padding: 2%;
-		margin: 2%;
-	  }
+  .recipe button:hover {
+	background-color: var(--clr-pop);
+	color: var(--clr-font)
   }
   
   .ingredient-list {
-	margin-top: 3%;
 	background-color: #f0f0f0;
 	color: black;
-	border-radius: 0.5rem;
 	padding: 0.3rem;
+	margin-top: 0.2em;
+	position: relative;
   }
 
   .ingredient-list li{
@@ -393,7 +395,7 @@ code {
   }
 
   .health__div {
-	margin: 2%;
+	color: white;
   }
 
   /* About page Styling */
@@ -413,6 +415,57 @@ code {
 	font-weight: bold;
   }
 
+  /* Modal */
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 98;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal {
+	position: relative;
+	z-index: 99;
+	width: 100%;
+	max-width: 40%;
+	max-height: 90%;
+	margin: 0 auto;
+	overflow-y: auto;
+	overflow-x: hidden;
+  }
+
+  @media(max-width: 800px){
+	.modal {
+		max-width: 80%;
+	}
+ }  
+ 
+ .modal-close {
+	font-size: 3rem;
+	width: 50px;
+	border: 0;
+	background-color: var(--clr-pop) !important;
+	-webkit-appearance: none;
+	cursor: pointer;
+	font-weight: bold;
+  }
+  .modal-close:hover {
+	background-color: crimson !important;
+	color: #ffffff !important;
+  }
+  .modal-body {
+	padding: 1.25rem 1.5rem;
+	border-radius: 4px;
+	background-color: transparent;
+  }
+
   /* Footer Styling */
 
 .footer-container {
@@ -422,7 +475,7 @@ code {
   
   footer {
 	text-align: center;
-	background-color: #538026;
+	background-color: var(--clr-primary);
 	position: absolute; 
 	bottom: 0; 
 	width: 100%;
@@ -432,7 +485,7 @@ code {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 15px;
-	background-color: #538026;
+	background-color: var(--clr-primary);
 	font-size: 1.2rem;
 	color: #000000;
   }
@@ -445,13 +498,13 @@ code {
 	.navigation-footer {
 	  flex-direction: column;
 	  margin-top: 10px;
-	  background-color: #538026;
+	  background-color: var(--clr-primary);
 	}
   }
   
   .navigation-footer  .navLink{
-	border: 1px solid #538026;
-	background-color: #538026;
+	border: 1px solid var(--clr-primary);
+	background-color: var(--clr-primary);
 	border-radius: 5x;
 	padding: 5px;
 	font-weight: bold;
@@ -462,7 +515,7 @@ code {
   }
   
   .navigation-footer  .navLink:hover{
-	background-color: #7FFF00;
+	background-color: var(--clr-pop);
 	transition: all 250ms ease-in-out;
 	border-radius: 5px;
   }
@@ -496,9 +549,10 @@ code {
 	  display: flex;
 	  flex-direction: column;
 	  font-size: 1.05rem;
+	  width: 30%;
 	  margin-bottom: 8px;
 	  font-weight: bold;
-	  color: #538026;
+	  color: var(--clr-primary);
   
 	  background-color: #f5f6fa;
 	  box-shadow: 0px 0px 12px 2px rgba(66, 64, 64, 0.2);
@@ -508,9 +562,16 @@ code {
 	  margin: 5% 0% 5% 0%;
   }
   
+  @media(max-width: 1000px) {
+	.login-main form{
+		width: 45%;
+	}
+  }
+
   @media(max-width: 600px) {
 	.login-main form{
 	  padding: 4% 4% 6% 4%;
+	  width: 65%;
 	}
   }
   
@@ -524,7 +585,7 @@ code {
 	font-size: 1.05rem;
 	margin-bottom: 8px;
 	font-weight: bold;
-	color: #538026;
+	color: var(--clr-primary);
   }
   
   .login-main input{
@@ -532,7 +593,7 @@ code {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 5px;
-	color: #538026;
+	color: var(--clr-primary);
   }
   
   .login-main .mainLogin-btn {
@@ -552,7 +613,7 @@ code {
   }
   
   .login-main .mainLogin-btn:hover {
-	background-color: #538026;
+	background-color: var(--clr-primary);
   }
   
   .login-redirect{
