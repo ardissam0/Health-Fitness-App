@@ -14,7 +14,7 @@ const Navigation = () => {
     <div>
       <div className="navigation">
         <div className="navLink">
-          <Link style ={{textDecoration: 'None'}} to="/"><p>HOME</p></Link>
+          <Link style ={{textDecoration: 'None'}} to="/"><p>Home</p></Link>
         </div>
         <div className="navLink">
           <Link style ={{textDecoration: 'None'}} to="/About"><p>About</p></Link>
