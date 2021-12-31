@@ -25,26 +25,10 @@ function App() {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
         </div>
-          <div className="footer-container">
-            <footer>
-                  <div className="navigation-footer">
-                    <div className="navLink">
-                    <Link style ={{textDecoration: 'None'}} to="/"><p>Home</p></Link>
-                  </div>
-                  <div className="navLink">
-                    <Link style ={{textDecoration: 'None'}} to="/About"><p>About</p></Link>
-                  </div>
-                  <div className="navLink">
-                    <button className="Logout__button-footer" onClick={() => fire.auth().signOut()}>Log Out</button>
-                  </div>
-                  <div id="edamam-badge" data-color="white"></div>
-                </div>
-                <span>&copy; Copyright {(new Date().getFullYear())} Health App</span>
-                <br/>
-                <br/>
-                <br/>
-            </footer>
-      </div>  
+        <footer>
+            <span>&copy; Copyright {(new Date().getFullYear())} www.samardis.com</span>
+            <div id="edamam-badge" data-color="white"></div>
+        </footer>
       </Router>
     </AuthProvider>
   </div>
